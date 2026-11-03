@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>周产品目标与复盘</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261103-63" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="desktop-rail" aria-label="一级导航">
+        <div class="rail-logo">L</div>
+        <nav>
+          <a href="#"><i data-lucide="gauge"></i><span>驾驶舱</span></a>
+          <a href="#"><i data-lucide="clipboard-list"></i><span>任务管理</span></a>
+          <a href="#"><i data-lucide="wand-sparkles"></i><span>产品中心</span></a>
+          <a href="#"><i data-lucide="package-check"></i><span>上架转化</span></a>
+          <a class="active" href="#"><i data-lucide="clipboard-check"></i><span>运营节奏</span></a>
+          <a href="#"><i data-lucide="chart-no-axes-combined"></i><span>词排名跟进</span></a>
+          <a href="#"><i data-lucide="chart-spline"></i><span>市场趋势</span></a>
+          <a href="#"><i data-lucide="boxes"></i><span>库存管理</span></a>
+          <a href="#"><i data-lucide="megaphone"></i><span>广告增长</span></a>
+          <a href="#"><i data-lucide="wand-2"></i><span>诊断与AI</span></a>
+          <a href="#"><i data-lucide="shield-check"></i><span>账号合规</span></a>
+          <a href="#"><i data-lucide="radio-tower"></i><span>情报中心</span></a>
+          <a href="#"><i data-lucide="sun"></i><span>天气系统</span></a>
+          <a href="#"><i data-lucide="database"></i><span>基础数据</span></a>
+          <a href="#"><i data-lucide="settings"></i><span>系统设置</span></a>
+        </nav>
+      </aside>
+
+      <aside class="desktop-sidebar" aria-label="运营节奏导航">
+        <h2>运营节奏</h2>
+        <div class="sidebar-group">
+          <span>报表</span>
+          <a href="#"><i data-lucide="bar-chart-3"></i>AMZ日销报表</a>
+        </div>
+        <div class="sidebar-group">
+          <span>优化进度</span>
+          <a href="#"><i data-lucide="list-checks"></i>产品优化进度</a>
+        </div>
+        <div class="sidebar-group">
+          <span>目标</span>
+          <a class="active" href="#"><i data-lucide="clipboard-check"></i>周产品目标与复盘</a>
+          <a href="#"><i data-lucide="calendar-days"></i>月度目标</a>
+          <a href="#"><i data-lucide="wallet-cards"></i>预算测算</a>
+          <a href="#"><i data-lucide="chart-no-axes-combined"></i>5年规划</a>
+        </div>
+      </aside>
+
+      <header class="app-header">
+        <div class="desktop-heading">
+          <span>运营节奏 / 周产品目标与复盘</span>
+          <div><strong>周产品目标与复盘</strong><button class="plain-icon" title="查看页面说明"><i data-lucide="info"></i></button></div>
+          <small>周产品复盘工作台</small>
+        </div>
+        <div class="header-title mobile-title">
+          <span>周产品目标与复盘</span>
+          <button class="plain-icon" title="查看页面说明"><i data-lucide="info"></i></button>
+        </div>
+        <div class="header-actions">
+          <label class="desktop-global-search"><i data-lucide="search"></i><input placeholder="搜索页面、产品、任务或关键词" /><kbd>Ctrl K</kbd></label>
+          <button class="favorite-button" id="favoriteButton" aria-controls="favoriteDrawer" aria-expanded="false"><i data-lucide="star"></i>收藏产品</button>
+          <button class="plain-icon" title="全局搜索"><i data-lucide="search"></i></button>
+          <button class="plain-icon" title="快捷新建"><i data-lucide="plus"></i></button>
+          <button class="plain-icon notification" title="通知"><i data-lucide="bell"></i><b>9</b></button>
+          <span class="avatar">杨</span>
+        </div>
+      </header>
+
+      <nav class="subnav" aria-label="运营节奏导航">
+        <a href="#">AMZ日销报表</a>
+        <a href="#">产品优化进度</a>
+        <a class="active" href="#">周产品目标与复盘</a>
+        <a href="#">月度目标</a>
+        <a href="#">预算测算</a>
+        <a href="#">5年规划</a>
+      </nav>
+
+      <main class="main">
+        <section class="intro">
+          <p>对比每周产品目标与实际表现，优先处理高风险和收藏产品异常。</p>
+          <div class="week-card">
+            <div class="week-picker">
+              <button class="week-range-trigger" id="weekRangeTrigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="weekPickerPopover">
+                <i data-lucide="calendar-days"></i>
+                <span id="weekRangeLabel">当前周期</span>
+                <i class="week-trigger-chevron" data-lucide="chevron-down"></i>
+              </button>
+              <div class="week-picker-popover" id="weekPickerPopover" role="dialog" aria-label="自定义周周期" hidden>
+                <div class="week-picker-head">
+                  <div>
+                    <strong>选择周周期</strong>
+                    <span>周期固定为周四至下周三，未来日期不可选</span>
+                  </div>
+                  <button class="plain-icon week-picker-close" id="closeWeekPicker" type="button" title="关闭"><i data-lucide="x"></i></button>
+                </div>
+                <div class="week-stepper">
+                  <button class="plain-icon" id="previousWeek" type="button" title="上一周期"><i data-lucide="chevron-left"></i></button>
+                  <div>
+                    <span>当前选择</span>
+                    <strong id="weekPreviewLabel">当前周期</strong>
+                  </div>
+                  <button class="plain-icon" id="nextWeek" type="button" title="下一周期"><i data-lucide="chevron-right"></i></button>
+                </div>
+                <label class="week-date-field" for="weekDateInput">
+                  <span>选择周期内任意日期</span>
+                  <input id="weekDateInput" type="date" />
+                </label>
+                <div class="week-picker-actions">
+                  <button class="week-cancel-button" id="cancelWeekPicker" type="button">取消</button>
+                  <button class="week-apply-button" id="applyWeekPicker" type="button">应用</button>
+                </div>
+              </div>
+            </div>
+            <span class="sync-divider"></span>
+            <span class="sync-text">最近同步 2026/11/3 16:30:00</span>
+            <button class="plain-icon sync-button" id="syncButton" title="立即同步"><i data-lucide="refresh-cw"></i></button>
+          </div>
+        </section>
+
+        <section class="sync-row">
+          <div class="data-quality">实际数据：<strong id="actualPeriodLabel">加载中</strong>；日期异常 <strong>0</strong> 条，未关联 DE 产品 <strong>0</strong> 条。</div>
+        </section>
+
+        <section class="metric-grid" aria-label="周产品复盘核心指标">
+          <button class="metric-card blue" type="button" data-insight="visible" aria-haspopup="dialog" aria-controls="insightModal">
+            <div class="metric-orb"><i data-lucide="boxes"></i></div>
+            <span class="metric-label">可见产品数</span>
+            <strong class="metric-value" id="visibleProductCount">0</strong>
+            <span class="metric-help">当前账号产品范围</span>
+            <i class="metric-open-icon" data-lucide="arrow-up-right"></i>
+          </button>
+          <button class="metric-card red" type="button" data-insight="risk" aria-haspopup="dialog" aria-controls="insightModal">
+            <div class="metric-orb"><i data-lucide="shield-alert"></i></div>
+            <span class="metric-label">高风险产品数</span>
+            <strong class="metric-value" id="riskProductCount">0</strong>
+            <span class="metric-help">仅统计 P5 来源等级</span>
+            <i class="metric-open-icon" data-lucide="arrow-up-right"></i>
+          </button>
+          <button class="metric-card green" type="button" data-insight="ad" aria-haspopup="dialog" aria-controls="insightModal">
+            <div class="metric-orb"><i data-lucide="badge-check"></i></div>
+            <span class="metric-label">广告达标率</span>
+            <strong class="metric-value dash" id="adPassRate">—</strong>
+            <span class="metric-help">广告花费、CVR、ACOS三项均有效</span>
+            <i class="metric-open-icon" data-lucide="arrow-up-right"></i>
+          </button>
+          <button class="metric-card mint" type="button" data-insight="profit" aria-haspopup="dialog" aria-controls="insightModal">
+            <div class="metric-orb"><i data-lucide="circle-dollar-sign"></i></div>
+            <span class="metric-label">利润率达标率</span>
+            <strong class="metric-value dash" id="profitPassRate">—</strong>
+            <span class="metric-help">仅统计有效公式结果</span>
+            <i class="metric-open-icon" data-lucide="arrow-up-right"></i>
+          </button>
+          <button class="metric-card amber" type="button" data-insight="favorite" aria-haspopup="dialog" aria-controls="insightModal">
+            <div class="metric-orb"><i data-lucide="star"></i></div>
+            <span class="metric-label">收藏产品异常数</span>
+            <strong class="metric-value" id="favoriteIssueCount">0</strong>
+            <span class="metric-help">优先级产品需要关注</span>
+            <i class="metric-open-icon" data-lucide="arrow-up-right"></i>
+          </button>
+        </section>
+
+        <section class="panel review-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>完整复盘表</h2>
+            </div>
+            <div class="view-switch" role="tablist">
+              <button class="active" data-view="core">核心指标</button>
+              <button data-view="full">全部指标</button>
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <label class="switch-control">
+              <input id="favoriteOnly" type="checkbox" />
+              <span class="switch"></span>
+              <span>仅看收藏</span>
+            </label>
+            <button class="reset-button" id="resetFilters"><i data-lucide="rotate-ccw"></i>重置</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="review-table" id="reviewTable">
+              <colgroup id="reviewTableCols"></colgroup>
+              <thead id="reviewTableHead"></thead>
+              <tbody id="reviewTableBody"></tbody>
+              <tfoot id="reviewTableSummary"></tfoot>
+            </table>
+            <div class="empty-state" id="emptyState" hidden>
+              <i data-lucide="inbox"></i>
+              <strong>没有符合当前筛选条件的复盘记录</strong>
+              <span>可以调整筛选条件后再试。</span>
+            </div>
+          </div>
+          <nav class="table-pagination" id="tablePagination" aria-label="复盘表分页"></nav>
+        </section>
+
+      </main>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <a href="#"><i data-lucide="gauge"></i><span>驾驶舱</span></a>
+        <a href="#"><i data-lucide="clipboard-list"></i><span>任务管理</span></a>
+        <a href="#"><i data-lucide="wand-sparkles"></i><span>产品中心</span></a>
+        <a href="#"><i data-lucide="package-check"></i><span>上架转化</span></a>
+        <a class="active" href="#"><i data-lucide="clipboard-check"></i><span>运营节奏</span></a>
+        <a href="#"><i data-lucide="chart-no-axes-combined"></i><span>数据分析</span></a>
+      </nav>
+    </div>
+
+    <div class="insight-backdrop" id="insightBackdrop"></div>
+    <section class="insight-modal" id="insightModal" role="dialog" aria-modal="true" aria-labelledby="insightTitle" aria-hidden="true">
+      <header class="insight-modal-head">
+        <div>
+          <span id="insightEyebrow">指标分析</span>
+          <h2 id="insightTitle">指标明细</h2>
+          <p id="insightSubtitle"></p>
+        </div>
+        <div class="insight-head-actions">
+          <span class="insight-period"><i data-lucide="calendar-days"></i><span id="insightPeriod"></span></span>
+          <button class="plain-icon" id="closeInsightModal" type="button" title="关闭"><i data-lucide="x"></i></button>
+        </div>
+      </header>
+      <div class="insight-modal-body">
+        <div class="insight-stat-grid" id="insightSummary"></div>
+        <div class="insight-toolbar">
+          <div class="insight-tabs" id="insightTabs" role="tablist"></div>
+          <label class="insight-search">
+            <i data-lucide="search"></i>
+            <input id="insightSearch" type="search" placeholder="搜索产品或负责人" />
+          </label>
+        </div>
+        <div class="insight-visual" id="insightVisual"></div>
+        <div class="insight-table-wrap">
+          <table class="insight-table">
+            <thead>
+              <tr><th>产品</th><th>负责人</th><th>目标日销</th><th>实际日销</th><th id="insightMetricHeading">关键指标</th><th>状态</th><th>操作</th></tr>
+            </thead>
+            <tbody id="insightTableBody"></tbody>
+          </table>
+          <div class="insight-empty" id="insightEmpty" hidden><i data-lucide="inbox"></i><strong>当前条件下暂无产品</strong><span>可以切换上方分类或调整搜索条件。</span></div>
+        </div>
+        <footer class="insight-footer"><span id="insightResultCount">共 0 款产品</span><span>统计周期与主页面保持一致</span></footer>
+      </div>
+    </section>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="detail-drawer" id="detailDrawer" aria-label="产品复盘详情">
+      <div class="drawer-head">
+        <div>
+          <span>产品复盘详情</span>
+          <h2 id="drawerProductName">产品</h2>
+          <p id="drawerProductMeta">ASIN · 负责人 · 季节</p>
+        </div>
+        <button class="plain-icon" id="closeDrawer" title="关闭"><i data-lucide="x"></i></button>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-tags"><span id="drawerLevel" class="level-tag p5">P5</span><span id="drawerStatus" class="result-tag warn">广告关注</span></div>
+        <div class="drawer-kpi-grid">
+          <div><span>阶段销售额</span><strong id="drawerRevenue">€0</strong></div>
+          <div><span>日销完成率</span><strong id="drawerSalesChange">0%</strong></div>
+          <div><span>实际日均广告花费</span><strong id="drawerSpend">€0</strong></div>
+          <div><span>广告比（实际 / 目标）</span><strong id="drawerAcos">0%</strong></div>
+        </div>
+        <div class="drawer-metrics">
+          <div><span>目标日销</span><strong id="drawerTargetDaily">0</strong></div>
+          <div><span>实际日销</span><strong id="drawerActualDaily">0</strong></div>
+          <div><span>广告订单（日均 / 累计 / 目标日均）</span><strong id="drawerAdOrders">0</strong></div>
+          <div><span>CPC（实际 / 目标）</span><strong id="drawerCpc">0</strong></div>
+          <div><span>CVR（实际 / 目标）</span><strong id="drawerCvr">0%</strong></div>
+          <div><span>净利润率</span><strong id="drawerAdRatio">0%</strong></div>
+        </div>
+        <label class="drawer-label" for="reviewNote">复盘结论</label>
+        <textarea id="reviewNote" rows="5" placeholder="记录本周实际表现、异常原因和需要协同的事项..."></textarea>
+        <label class="drawer-label">建议动作</label>
+        <div class="drawer-action" id="drawerAction">优化高花费低转化关键词 <i data-lucide="chevron-down"></i></div>
+      </div>
+      <div class="drawer-footer">
+        <button class="secondary-button" id="saveDraft">保存草稿</button>
+        <button class="primary-button" id="completeReview"><i data-lucide="check"></i>完成复盘</button>
+      </div>
+    </aside>
+
+    <div class="favorite-backdrop" id="favoriteBackdrop"></div>
+    <aside class="favorite-drawer" id="favoriteDrawer" aria-label="收藏产品" aria-hidden="true">
+      <div class="favorite-drawer-head">
+        <div>
+          <h2>收藏产品</h2>
+          <p>拖拽调整个人优先级，排在最前的产品最重要。</p>
+        </div>
+        <button class="favorite-close" id="closeFavoriteDrawer" title="关闭收藏产品"><i data-lucide="x"></i></button>
+      </div>
+      <div class="favorite-empty">
+        <i data-lucide="star"></i>
+        <strong>暂无收藏产品</strong>
+        <span>在产品列表中点击星标后会显示在这里。</span>
+      </div>
+    </aside>
+
+    <div class="column-filter-popover" id="columnFilterPopover" role="dialog" aria-label="列筛选" hidden>
+      <div class="column-filter-head">
+        <strong id="columnFilterTitle">筛选</strong>
+        <button type="button" id="clearColumnFilter">清除筛选</button>
+      </div>
+      <label class="column-filter-search">
+        <i data-lucide="search"></i>
+        <input id="columnFilterSearch" type="search" placeholder="搜索选项" />
+      </label>
+      <div class="column-filter-tools">
+        <button type="button" id="columnFilterSelectAll">全选</button>
+        <button type="button" id="columnFilterSelectNone">清空选择</button>
+      </div>
+      <div class="column-filter-options" id="columnFilterOptions"></div>
+      <div class="column-filter-footer">
+        <button class="secondary-button" type="button" id="cancelColumnFilter">取消</button>
+        <button class="primary-button" type="button" id="applyColumnFilter">确定</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"><i data-lucide="check-circle-2"></i><span>已保存</span></div>
+    <script src="./api.js?v=20261103-63"></script>
+    <script src="./app.js?v=20261103-63"></script>
+  </body>
+</html>
